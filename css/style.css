@@ -1,0 +1,290 @@
+/* GERAL --------------------------------------------------------*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html{
+    font-size: 8px;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+ul,li {
+    list-style-type: none;
+}
+
+body{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+img{
+    width: 100%;
+}
+
+/*Cabeçalho --------------------------------------------------------*/
+
+.cabecalho {
+    background-color: #674582;
+    width: 100vw;
+    position: fixed;
+    top:0;
+    z-index: 999;
+}
+
+.container{
+    margin: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.cabecalho__logo{
+    max-width: 200px;
+    min-width: 200px;
+}
+
+.navegacao__web{
+    display: none;
+}
+
+.navegacao__mobile img{
+    max-width: 20px;
+    min-width: 20px;
+}
+
+
+@media (min-width:768px){
+    .navegacao__mobile{
+        display: none;
+    }
+
+    .navegacao__web{
+        display: flex;
+        font-size: 1.5rem;
+        align-items: center;
+        margin:0;
+        padding: 0;
+    }
+    .navegacao{
+        margin:0;
+    }
+    .navegacao__web li{
+        display: inline-block;
+        padding-left: 7px;
+    }
+
+}
+
+/*Banner--------------------------------------------------------*/
+.banner{
+    background-image: url(../img/bg-banner-claro.png);
+    background-size:cover;
+    background-position:center center; /*- offset na ref da img*/
+    height: 100vh;
+    color: #FFFFFF;
+}
+
+.container--banner{
+    margin: 0 5%;
+    margin-top: 3vh;
+}
+
+.banner__titulo{
+    padding-top: 50vh;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.banner__subtitulo{
+    font-size: 1.6rem;
+    font-weight: normal;
+}
+
+.btn{
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    background:#C083B9;
+    padding: 1.2rem 3rem;
+    font-size: 2.6rem;
+    border-radius:10px;
+}
+
+@media (min-width:768px){
+    .btn{
+        display: inline-block;
+    }
+}
+
+/*Menu perfis--------------------------------------------------------*/
+.container--perfis{
+    margin: 0 5%;
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.menu-perfis__titulo{
+    font-family: 'Roboto Slab',Arial, Helvetica, sans-serif;
+    color: #63458A;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top:5vh;
+}
+
+.navegacao__web{
+margin-left: 5px;
+}
+
+.menu-perfis__perfil {
+    color: #000000;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.menu-perfis__links img{
+    background: #63458A;
+    border-radius: 10px;
+    max-width: 150px;
+    margin-top: 5vh;
+}
+
+/*Rodapé--------------------------------------------------------*/
+
+.rodape{
+    color: #FFFFFF;
+    text-align: center;
+    background-color: #323534;
+    margin-top:5vh;
+}
+
+.container--rodape{
+    display: flex;
+    flex-direction: column;
+    margin: 0 5%;
+    font-size: 1.6rem;
+    align-items: center;
+    text-align: center;
+}
+
+.rodape__links{
+    padding:0;
+    padding-top:5vh;
+    line-height:3rem;
+}
+
+.rodape__logo{
+    padding: 2vh 0;
+    max-width: 180px;
+    min-width: 180px;
+}
+
+.rodape__link-face{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5vh;
+
+}
+.rodape__link-face img {
+    width:16px;
+}
+
+.rodape__copyrigth{
+    background-color: #292A2A;
+    line-height: 5vh;
+    font-style: normal;
+    font-size: 1rem;
+    padding: 0;
+}
+
+@media (min-width:768px){
+    html{
+        font-size: 9px;
+    }
+
+    .container{
+        margin: 0 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    
+    .navegacao__web li{
+        display: inline;
+        margin-left: 5px;
+        }
+
+        
+    .container--banner{
+        margin: 0 10%;
+        margin-top: 3vh;
+    }
+
+    .container--perfis{
+        margin: 0 10%;
+        display:flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    .menu-perfis__titulo{
+        font-family: 'Roboto Slab',Arial, Helvetica, sans-serif;
+        color: #63458A;
+        font-size: 1.8rem;
+        text-align: center;
+        margin-top:5vh;
+    }
+
+    .menu-perfis__perfil {
+        color: #000000;
+        margin:0 20px;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .container--rodape *{
+        padding:0 1vw;
+    }
+    
+    .container--rodape{
+        display: flex;
+        flex-direction: row;
+        margin: 0 10%;
+        font-size: 1.5rem;
+        align-content: center;
+        justify-content: center;
+    }
+
+}
+
+@media (min-width:1024px){
+    html{
+        font-size: 10px;
+    }
+
+    .container{
+        margin: 0 15%;       
+    }
+
+    .container--banner{
+        margin: 0 15%;
+    }
+
+    .menu-perfis__perfil {
+    color: #000000;
+    margin:0 50px;
+    text-align: center;
+    font-size: 1.5rem;
+    }     
+
+    .container--rodape{
+        margin: 0 15%;
+    }
+}
