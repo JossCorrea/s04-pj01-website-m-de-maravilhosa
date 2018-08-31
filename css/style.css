@@ -42,7 +42,6 @@ img{
     align-items: center;
 }
 
-
 .cabecalho__logo{
     max-width: 200px;
     min-width: 200px;
@@ -57,30 +56,7 @@ img{
     min-width: 20px;
 }
 
-
-@media (min-width:768px){
-    .navegacao__mobile{
-        display: none;
-    }
-
-    .navegacao__web{
-        display: flex;
-        font-size: 1.5rem;
-        align-items: center;
-        margin:0;
-        padding: 0;
-    }
-    .navegacao{
-        margin:0;
-    }
-    .navegacao__web li{
-        display: inline-block;
-        padding-left: 7px;
-    }
-
-}
-
-/*Banner--------------------------------------------------------*/
+/*Banner principal --------------------------------------------------------*/
 .banner{
     background-image: url(../img/bg-banner-claro.png);
     background-size:cover;
@@ -116,11 +92,29 @@ img{
     font-size: 2.6rem;
     border-radius:10px;
 }
+/*Banner perfil--------------------------------------------------------*/
+.banner-perfil{
+    background-image: url(../img/fundo-perfil.jpg);
+    background-size:cover;
+    background-position:center center; /*- offset na ref da img*/
+    height: 100vh;
+    color: #FFFFFF;
+}
 
-@media (min-width:768px){
-    .btn{
-        display: inline-block;
-    }
+.banner-perfil__color{
+    background-color: rgba(103,69,130,0.6);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    height:100vh;
+}
+
+.banner-perfil__titulo{
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding-bottom: 3vh;
 }
 
 /*Menu perfis--------------------------------------------------------*/
@@ -129,9 +123,10 @@ img{
     display:flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top:5vh;
 }
 
-.menu-perfis__titulo{
+.principal{
     font-family: 'Roboto Slab',Arial, Helvetica, sans-serif;
     color: #63458A;
     font-size: 1.8rem;
@@ -139,15 +134,13 @@ img{
     margin-top:5vh;
 }
 
-.navegacao__web{
-margin-left: 5px;
-}
-
 .menu-perfis__perfil {
     color: #000000;
     text-align: center;
     font-size: 1.5rem;
+    padding:0 10%;
 }
+
 .menu-perfis__links img{
     background: #63458A;
     border-radius: 10px;
@@ -155,8 +148,111 @@ margin-left: 5px;
     margin-top: 5vh;
 }
 
-/*Rodapé--------------------------------------------------------*/
+/* Perfil ------------------------------------------------------*/
+.perfil{
+    color: #63458A;
+    font-size: 1.6rem;
+}
 
+.container--perfis{
+    margin: 0 5%;
+}
+
+.menu-perfis__titulo{
+    font-family: 'Roboto Slab',Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+    margin:3vh 0;
+}
+
+.perfil__sobre{
+    display: flex;
+    align-items: center;
+}
+
+.u-espaco-direita{
+    margin-right: 15px;
+}
+
+.perfil__imagem{
+    background: #63458A;
+    border-radius:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.perfil__imagem img{
+    max-width: 150px;
+    min-width: 150px;
+    border-radius:50%;
+    padding: 5px;
+   }
+
+.perfil__citacao{
+    width: 100%;
+    border: 1px solid #63458A;
+    font-size: 2rem;
+    font-weight: 550;
+    line-height: 3rem;
+    text-align: center;
+}
+
+.u-esquerda{
+    text-align: left;
+}
+
+.perfil__historia{
+    width: 100%;
+}
+
+.perfil__historia img{
+    padding: 3vh 0;
+}
+
+.perfil__historia a{
+    color:#63458A;
+    word-wrap: break-word;
+}
+
+.creditos{
+    background: #C083B9;
+    margin-top:5vh;
+}
+
+.container--creditos{
+    margin:0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.creditos__dados{
+    color:#63458A;
+    font-weight: bold;
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+    padding-left: 2vw;
+}
+
+.creditos__dados a{
+    color:#63458A;
+}
+
+.creditos__foto{
+    max-width:100px;
+    min-width:100px;
+}
+
+.btn--voltar-principal{
+    display:block;
+    margin:8vh 15%;
+}
+
+
+
+/*Rodapé--------------------------------------------------------*/
 .rodape{
     color: #FFFFFF;
     text-align: center;
@@ -171,11 +267,11 @@ margin-left: 5px;
     font-size: 1.6rem;
     align-items: center;
     text-align: center;
+    padding-top:1vh;
 }
 
 .rodape__links{
     padding:0;
-    padding-top:5vh;
     line-height:3rem;
 }
 
@@ -189,11 +285,12 @@ margin-left: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 5vh;
-
+    height: 20px;
+    margin-bottom: 5vh;
 }
+
 .rodape__link-face img {
-    width:16px;
+    width: 16px;
 }
 
 .rodape__copyrigth{
@@ -204,87 +301,118 @@ margin-left: 5px;
     padding: 0;
 }
 
+/* Media queries ----------------------------------------- */
+
 @media (min-width:768px){
+    /* Geral */
     html{
         font-size: 9px;
     }
 
+    /* Cabeçalho */
     .container{
         margin: 0 10%;
+    }
+
+    .navegacao__mobile{
+        display: none;
+    }
+
+    .navegacao__web{
         display: flex;
-        justify-content: space-between;
+        font-size: 1.5rem;
         align-items: center;
-        
+        padding:0;
+    }
+
+    .navegacao__web li{
+        display: inline-block;
+        padding-left: 1vw;
     }
     
-    .navegacao__web li{
-        display: inline;
-        margin-left: 5px;
-        }
-
-        
+    /* Banner principal */
     .container--banner{
         margin: 0 10%;
         margin-top: 3vh;
     }
-
     .container--perfis{
         margin: 0 10%;
-        display:flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
     }
-    
-    .menu-perfis__titulo{
-        font-family: 'Roboto Slab',Arial, Helvetica, sans-serif;
-        color: #63458A;
-        font-size: 1.8rem;
-        text-align: center;
-        margin-top:5vh;
+    .btn--principal{
+        display: inline-block;
     }
 
-    .menu-perfis__perfil {
-        color: #000000;
-        margin:0 20px;
-        text-align: center;
-        font-size: 1.5rem;
-    }
-    .container--rodape *{
-        padding:0 1vw;
-    }
-    
+    /* Rodapé */
     .container--rodape{
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         margin: 0 10%;
         font-size: 1.5rem;
-        align-content: center;
-        justify-content: center;
     }
 
+    .rodape__link-face{
+        margin-bottom: 0;
+        }
 }
 
-@media (min-width:1024px){
+@media (min-width:768px){
+    /* Geral */
     html{
         font-size: 10px;
     }
 
+    /* Cabeçalho */
     .container{
-        margin: 0 15%;       
+        margin: 0 15%;
     }
 
+    /* .navegacao__mobile{
+        display: none;
+    } */
+
+    /* .navegacao__web{
+        display: flex;
+        font-size: 1.5rem;
+        align-items: center;
+        padding:0;
+    } */
+
+    /* .navegacao__web li{
+        display: inline-block;
+        padding-left: 1vw;
+    } */
+    
+    /* Banner principal */
     .container--banner{
         margin: 0 15%;
+        margin-top: 3vh;
     }
 
-    .menu-perfis__perfil {
-    color: #000000;
-    margin:0 50px;
-    text-align: center;
-    font-size: 1.5rem;
-    }     
-
-    .container--rodape{
+    .container--perfis{
         margin: 0 15%;
     }
+    .menu-perfis__perfil {
+        padding:0 15%;
+    }
+
+
+    .btn--principal{
+        display: inline-block;
+    }
+
+    /* Rodapé */
+    .container--rodape{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 15%;
+        font-size: 1.5rem;
+    }
+
+    .rodape__link-face{
+        margin-bottom: 0;
+        }
 }
